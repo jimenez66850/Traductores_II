@@ -8,7 +8,6 @@ def separarRenglones():
             iterador.append(lineas)
     return iterador
 
-
 def crearObArb(numero, listaArgs):
     if numero == 24:
         return programa(numero, "programa", listaArgs)
@@ -302,9 +301,14 @@ if __name__ == '__main__':
         # AnalizadorLexico (Analiza y escribe en archivo)
         lista = analizadorLexico(separarRenglones())
         lista.append(objeto(23, "$", "$"))
+        # Escribe la lista a archivo
         anLeToArchivo(lista)
         # AnalizadorSintactico (Analiza y escribe arbol en archivo)
+        if not analizadorSintactico(lista)[0]:
+            raise ValueError("Error Sintactico")
+        #Agrega el arbol a una lista
         mostrarArbol(0, analizadorSintactico(lista)[1], arbol)
+        #Escribe la lista en archhivo
         arSiToArchivo(arbol)
     except ValueError as e:
         print(e)
