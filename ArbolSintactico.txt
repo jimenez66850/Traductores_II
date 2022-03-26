@@ -1,0 +1,14 @@
+programa
+	definiciones
+		definicion
+			defFunc
+				Tipo
+				Identificador
+				(
+				parametros
+				)
+				bloqFunc
+					{
+					defLocales
+					}
+		definiciones

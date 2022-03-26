@@ -1,0 +1,7 @@
+Contenido: int Simbolo: Tipo Tipo: 4
+Contenido: main Simbolo: Identificador Tipo: 0
+Contenido: ( Simbolo: ( Tipo: 14
+Contenido: ) Simbolo: ) Tipo: 15
+Contenido: { Simbolo: { Tipo: 16
+Contenido: } Simbolo: } Tipo: 17
+Contenido: $ Simbolo: $ Tipo: 23
