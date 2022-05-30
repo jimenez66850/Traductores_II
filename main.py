@@ -1,13 +1,11 @@
 from tokens import *
 
-
 def separarRenglones():
     with open("programa.txt", "r") as programaPrincipal:
         iterador = []
         for lineas in programaPrincipal:
             iterador.append(lineas)
     return iterador
-
 
 def crearObArb(numero, listaArgs):
     if numero == 24:
@@ -280,7 +278,7 @@ def analizadorLexico(listaRenglones):
                     if renglon[contadorPosiciones] == "\"" or renglon[contadorPosiciones] == "\'":
                         listaResultante.append(objeto(3, "Cadena", cadenaAuxiliar))
                     else:
-                        raise ValueError("CadenaInvalida")
+                        raise ValueError("InvalidString")
 
     return listaResultante
 
@@ -302,9 +300,14 @@ if __name__ == '__main__':
         # AnalizadorLexico (Analiza y escribe en archivo)
         lista = analizadorLexico(separarRenglones())
         lista.append(objeto(23, "$", "$"))
+        # Escribe la lista a archivo
         anLeToArchivo(lista)
         # AnalizadorSintactico (Analiza y escribe arbol en archivo)
+        if not analizadorSintactico(lista):
+            raise ValueError("SyntaxError")
+        #Agrega el arbol a una lista
         mostrarArbol(0, analizadorSintactico(lista)[1], arbol)
+        #Escribe la lista en archhivo
         arSiToArchivo(arbol)
     except ValueError as e:
         print(e)

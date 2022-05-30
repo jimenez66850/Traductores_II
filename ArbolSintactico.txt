@@ -10,5 +10,19 @@ programa
 				bloqFunc
 					{
 					defLocales
+						defLocal
+							sentencia
+								Identificador
+								=
+								expresion
+									expresion
+										termino
+											Identificador
+									OPsuma
+									expresion
+										termino
+											Identificador
+								;
+						defLocales
 					}
 		definiciones
